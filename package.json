@@ -1,0 +1,21 @@
+{
+  "name": "teletoexcelpayment",
+  "version": "1.0.0",
+  "description": "Tele to excel payment",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "author": "hungnm",
+  "license": "MIT",
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "node-fetch": "^3.3.2",
+    "node-telegram-bot-api": "^0.63.0"
+  },
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

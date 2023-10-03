@@ -16,6 +16,7 @@
     "node-telegram-bot-api": "^0.63.0"
   },
   "dependencies": {
+    "moment": "^2.29.4",
     "nodemon": "^3.0.1"
   }
 }

@@ -1,13 +1,7 @@
-/*!
- * Created by Manh Tuan (JUNO_OKYO)
- * Demo for my video on TikTok: https://www.tiktok.com/@juno_okyo/video/7284660854539177221
- * Follow me for more videos.
- *
- * Please edit webhookUrl and token before run this script!!!
- */
 import TelegramBot from 'node-telegram-bot-api';
 import fetch from 'node-fetch';
 import 'dotenv/config';
+import moment from 'moment'
 
 const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
@@ -27,9 +21,12 @@ bot.onText(/\/add (.+)/, (msg, match) => {
     const values = resp.split(',');
 
     const url = new URL(process.env.WEBHOOK_URL);
-    url.searchParams.append('Nhóm', (values[0]).toUpperCase());
-    url.searchParams.append('Việc', values[1]);
-    url.searchParams.append('Tiền', values[2]);
+
+    // const params = `?nhom=${(values[0]).toUpperCase()}&ngay=${moment().format('DD/MM/YYYY')}&viec=${values[1]}&tien=${values[2]}`
+    url.searchParams.append('NHÓM', (values[0]).toUpperCase());
+    url.searchParams.append('NGÀY', moment().format('DD/MM/YYYY'));
+    url.searchParams.append('VIỆC', values[1]);
+    url.searchParams.append('SỐ TIỀN', values[2]);
 
     fetch(url)
         .then(res => res.json())
